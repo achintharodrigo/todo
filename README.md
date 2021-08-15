@@ -50,3 +50,23 @@ The demo credentials are:
 
 **email:**  user@user.com  
 **password:**  password
+
+
+### 9. Email Reminders
+
+You must configure the **.env**  file to send email from your server. Please update the following lines:
+
+`MAIL_MAILER=smtp`  
+`MAIL_HOST=mailhog`  
+`MAIL_PORT=1025`  
+`MAIL_USERNAME=null`  
+`MAIL_PASSWORD=null`  
+`MAIL_ENCRYPTION=null`  
+`MAIL_FROM_ADDRESS=null`  
+
+Change these lines to reflect your SMTP server configuration settings.
+
+Then Run,  
+`php artisan schedule:work`
+
+_the scheduler checks tasks each minute. therefore, add an item that due on 3 hours and 2 minutes_
