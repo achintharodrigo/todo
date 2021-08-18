@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UserTableSeeder extends Seeder
@@ -13,9 +14,9 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory()->create([
+        User::factory()->create([
             'email' => 'admin@admin.com'
         ]);
-        \App\Models\User::factory(10)->create();
+        User::factory(10)->create();
     }
 }

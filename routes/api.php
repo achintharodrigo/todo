@@ -26,9 +26,9 @@ Route::post('login', [LoginController::class, 'login']);
 //    Route::resource('tasks', TaskController::class);
 //});
 
-Route::middleware('auth:api')->get('/tasks', [TaskController::class, 'index']);
+Route::middleware('auth:api')->get('/tasks', [TaskController::class, 'index'])->name('task.index');
 Route::middleware('auth:api')->prefix('/tasks')->group( function () {
-    Route::post('/store', [TaskController::class, 'store']);
-    Route::put('/{id}', [TaskController::class, 'update']);
-    Route::delete('/{id}', [TaskController::class, 'destroy']);
+    Route::post('/store', [TaskController::class, 'store'])->name('task.store');
+    Route::put('/{id}', [TaskController::class, 'update'])->name('task.update');
+    Route::delete('/{id}', [TaskController::class, 'destroy'])->name('task.destroy');
 });
